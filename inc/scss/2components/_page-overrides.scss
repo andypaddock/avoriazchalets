@@ -1,0 +1,194 @@
+/*! == PAGE OVERRIDES == */
+.single-property {
+    .hero {
+        .heading {
+            font-size: 1.5rem;
+            font-weight: 400;
+            padding: 0;
+
+            span {
+                font-weight: 300;
+            }
+        }
+
+        .full-360-link {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            height: 100%;
+            justify-content: flex-end;
+            margin-right: 5rem;
+
+            img {
+                padding: 1rem 0;
+            }
+
+            a {
+                font-weight: 400;
+                font-size: 0.8rem;
+                color: $color_blue_darkest;
+            }
+
+        }
+    }
+
+    .text-block {
+        .full-360-link {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 3rem;
+            text-align: center;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .facility-list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+
+
+        .facility-item {
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        img {
+            width: 2rem;
+            justify-self: flex-end;
+            margin-right: 1rem;
+        }
+    }
+
+    article {
+        padding: 0 3rem;
+    }
+
+    .property-add {
+        padding: 2rem 0;
+        border: 1px solid $color_blue_cyan;
+
+        h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+            padding: 3rem 5rem;
+        }
+
+        .arrow-link {
+            margin-left: 1rem;
+
+            &:before,
+            &:after {
+                right: 3rem;
+                border-color: $color_blue_darkest;
+            }
+        }
+    }
+}
+
+.home-hero {
+    .no-mob {
+        padding: 0 7rem;
+    }
+}
+
+.booknow-wrapper {
+    background: $color_blue_cyan;
+}
+
+.features-icons {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 2rem 0;
+
+    .feature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .feature-text {
+            font-weight: 400;
+            font-size: 0.8rem;
+            padding-top: 1rem;
+        }
+    }
+
+    img {
+        height: 1.5rem;
+    }
+}
+
+.other-properties {
+    .features-icons {
+        flex-wrap: wrap;
+        padding: 1rem 1rem 0;
+
+        .feature {
+            flex: 0 0 33.3333%;
+
+            .feature-text {
+                padding: 1rem 0;
+            }
+        }
+    }
+}
+
+.home,
+.page-our-properties {
+    .double {
+        justify-content: flex-end;
+    }
+}
+
+// CONTACT PAGE
+
+.address {
+    padding: 1rem 0 3rem;
+}
+
+// AVORIAZ GUIDE
+
+.container__guide,
+.container__guideone {
+    .guide-menu {
+        font-size: 0.9em;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .advert-header {
+        text-align: center;
+        width: 100%;
+        background: $color_blue_darkest;
+        color: white;
+        padding: 1rem;
+
+        .heading {
+            color: white;
+            font-weight: 400;
+        }
+    }
+
+    .advert-block {
+        a {
+            width: 80%;
+            padding: 0.5rem 1rem;
+        }
+
+        .heading {
+            padding: 1rem 0;
+        }
+    }
+
+    .cyan-link i {
+        padding-left: 5rem;
+    }
+}

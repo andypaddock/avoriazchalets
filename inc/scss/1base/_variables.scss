@@ -1,0 +1,32 @@
+/*! == VARIABLES == */
+
+/* COLORS */
+$color_grey_darkest:#1a1a1a; //background on body(dark)
+$color_grey_darker:#2f2f2f;
+$color_grey_dark:#707070;
+$color_grey_mid:#4A4A49;
+$color_grey_light:#888888;
+$color_grey_lighter:#d4d4d4;
+$color_grey_lightest:#ebebeb; //background on body (default)
+$color_blue_darkest: #2e2e50;
+$color_blue_cyan: #91E8FD;
+
+/* TYPOGRAPHY */
+$font_primary: 'Lato',
+sans-serif;
+$font_secondary: 'Lato',
+sans-serif;
+$font_size: 16;
+$font_line-height: 24;
+
+/* GRID */
+$container-width: 1200px;
+$grid-gap: 0;
+// $breakpoints: (xl: 1200px,
+//   lg: 992px,
+//   md: 768px,
+//   sm: 576px,
+//   xs: 350px);
+$page-split: 65% 35%;
+$page-split-left: 25% 50% 25%;
+$left-offset: 5rem;

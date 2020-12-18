@@ -1,0 +1,407 @@
+/*! == HEADER == */
+
+header {
+	position: fixed;
+	width: calc(100% - 1rem);
+	z-index: 99;
+	@include harshBlur;
+
+	.container {
+		grid-template-columns: 15% 70% 15%;
+		padding: 0 8rem;
+
+	}
+
+	a {
+		color: $color_blue_darkest;
+	}
+
+	.logo {
+		grid-row: 1/3;
+		grid-column: 1/2;
+		align-self: center;
+		font-weight: 600;
+		border-right: 1px solid;
+
+		span {
+			display: block;
+			font-weight: 300;
+		}
+	}
+
+	.book-now {
+		justify-self: center;
+		background: $color_blue_darkest;
+		grid-row: span 2;
+		margin-bottom: 1.5rem;
+		padding: 2rem 1.2rem 0.7rem;
+		text-transform: uppercase;
+		font-weight: 600;
+
+		a {
+			color: white;
+		}
+	}
+}
+
+.offer-template-default {
+	header {
+		background: rgba(145, 232, 253, 0.85);
+	}
+}
+
+.home-hero {
+	color: $color_blue_darkest;
+	min-height: 75vh;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 3;
+		height: 100%;
+		justify-content: flex-end;
+		padding-bottom: 2rem;
+	}
+
+	.read-more {
+		margin-top: 4rem;
+	}
+
+	.heading {
+		color: $color_blue_darkest;
+		text-transform: uppercase;
+
+		&__1 {
+			padding: 2rem 0;
+			// letter-spacing: 1.1rem;
+		}
+
+		span {
+			font-weight: 300;
+		}
+	}
+
+	p {
+		padding: 0 9rem;
+		text-align: center;
+	}
+
+}
+
+.hero {
+	&__background {
+		@include backgroundCover;
+		min-height: 50vh;
+	}
+
+	.heading,
+	article {
+		text-align: center;
+		padding: 1rem 0;
+	}
+}
+
+.hero-wrapper {
+
+	@include backgroundCover;
+
+}
+
+.nav {
+	font-size: 0.9em;
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+
+
+	}
+
+	.menu-item-has-children {
+		text-align: center;
+		width: 9.5rem;
+		margin-top: -0.5rem;
+		padding-top: 0.5rem;
+
+		&:hover {
+			background: $color_blue_darkest;
+
+			a {
+				color: white;
+			}
+		}
+
+		.sub-menu {
+			a {
+				&:after {
+					content: "";
+					position: absolute;
+					left: 4.5rem;
+					top: 50%;
+					margin-top: 0.5rem;
+					width: 1rem;
+					border-bottom: 1px solid white;
+
+				}
+			}
+		}
+	}
+
+	.sub-menu {
+		display: none;
+		list-style: none;
+		width: 9.5rem;
+		background: $color_blue_darkest;
+		text-align: center;
+		position: absolute;
+		padding: 1rem 1rem 0;
+
+		a {
+			color: white;
+			font-weight: 300;
+		}
+	}
+
+
+
+	.sub-menu .menu-item {
+		padding: 1rem;
+		margin: 0;
+	}
+
+	.sub-menu .menu-item:hover {
+		background: $color_blue_darkest;
+	}
+
+	.menu-item:hover .sub-menu {
+		display: block;
+	}
+
+	// &__upper-section, 
+	// &__lower-section {
+	// 	padding: 1rem 4rem;
+	// 	// background: white;
+	// }
+	&__upper-section {
+		grid-row: 1/2;
+		grid-column: 2/3;
+		margin-bottom: .25rem;
+		border-radius: .5rem .5rem 0 0;
+		padding: 1rem 3rem 0.5rem 3rem;
+	}
+
+	&__lower-section {
+		grid-row: 2/3;
+		grid-column: 2/3;
+		border-radius: 0 0 .5rem .5rem;
+		padding: 0.5rem 3rem 1rem 3rem;
+
+		a {
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+	}
+}
+
+
+
+video#bgvideo {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: 0;
+}
+
+// MOBILE MENU STYLES
+
+
+
+
+#menu-toggle {
+	display: none;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	position: relative;
+	position: relative;
+	cursor: pointer;
+	// background: rgba(255, 255, 255, .4);
+	border-radius: 5px;
+
+	.mobile-menu {
+		height: 0;
+		overflow: hidden;
+	}
+
+
+	span {
+		display: block;
+		background: #566973;
+		border-radius: 2px;
+		transition: .25s ease-in-out;
+	}
+
+	&:hover {
+		// background: rgba(255, 255, 255, .8);
+	}
+
+	#hamburger {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+
+		span {
+			width: 60px;
+			height: 4px;
+			position: relative;
+			top: 24px;
+			left: 20px;
+			margin: 10px 0;
+
+			&:nth-child(1) {
+				transition-delay: .5s;
+			}
+
+			&:nth-child(2) {
+				transition-delay: .625s;
+			}
+
+			&:nth-child(3) {
+				transition-delay: .75s;
+			}
+		}
+	}
+
+	#cross {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		transform: rotate(45deg);
+
+		span {
+			&:nth-child(1) {
+				height: 0%;
+				width: 4px;
+				position: absolute;
+				top: 10%;
+				left: 48px;
+				transition-delay: 0s;
+			}
+
+			&:nth-child(2) {
+				width: 0%;
+				height: 4px;
+				position: absolute;
+				left: 10%;
+				top: 48px;
+				transition-delay: .25s;
+			}
+		}
+	}
+}
+
+#menu-toggle.open {
+	.mobile-menu {
+		height: 100vh;
+	}
+
+	#hamburger {
+		span {
+			width: 0%;
+
+			&:nth-child(1) {
+				transition-delay: 0s;
+			}
+
+			&:nth-child(2) {
+				transition-delay: .125s;
+			}
+
+			&:nth-child(3) {
+				transition-delay: .25s;
+			}
+		}
+	}
+
+	#cross {
+		span {
+			&:nth-child(1) {
+				height: 80%;
+				transition-delay: .625s;
+			}
+		}
+
+		span {
+			&:nth-child(2) {
+				width: 80%;
+				transition-delay: .375s;
+			}
+		}
+	}
+}
+
+/* The Overlay (background) */
+.overlay {
+	max-height: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 5;
+	left: 0;
+	top: 0;
+	@include harshBlur;
+	overflow-x: hidden;
+	transition: 0.5s;
+
+	&.open {
+		max-height: 80vh;
+	}
+}
+
+
+/* Position the content inside the overlay */
+.overlay-content {
+	position: relative;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+	margin-top: 8rem;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.overlay a {
+	padding: 1rem;
+	text-decoration: none;
+	color: $color_blue_darkest;
+	display: block;
+	transition: 0.3s;
+	line-height: 1.4em;
+	font-weight: 400;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+	color: $color_grey_darker;
+}
+
+.overlay-button {
+	background: $color_blue_darkest;
+	margin-top: 2rem;
+	padding: 0.5rem 0;
+
+	a {
+		color: $color_blue_cyan;
+	}
+}
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+	.overlay a {
+		font-size: 20px
+	}
+}

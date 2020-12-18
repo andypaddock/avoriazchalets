@@ -1,0 +1,146 @@
+/*! == GRID == */
+/*=====MASTER GRID RULES=====*/
+
+body {
+  padding: 0.5rem;
+}
+
+body:before,
+body:after {
+  content: "";
+  position: fixed;
+  background: white;
+  left: 0;
+  right: 0;
+  height: 0.5rem;
+  z-index: 99;
+}
+
+body:before {
+  top: 0;
+}
+
+body:after {
+  bottom: 0;
+}
+
+
+
+.container {
+  // position: relative;
+  display: grid;
+  // grid-template-columns: $page-split;
+  // overflow:hidden;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 3rem;
+
+  &__guide {
+    grid-template-columns: 20% 80%;
+  }
+
+  &__guideone {
+    grid-template-columns: 20% 80%;
+  }
+
+  &__left {
+    grid-template-columns: $page-split-left;
+  }
+
+  &__full {
+    grid-template-columns: 1fr;
+  }
+
+  &__double {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+  }
+
+  &__stretch {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  &__tri {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+  }
+
+  &__offset {
+    grid-template-columns: 100%;
+    max-width: calc(#{$container-width} * .9);
+  }
+
+  &__narrow {
+    grid-template-columns: 100%;
+    max-width: calc(#{$container-width} * .8);
+  }
+
+  &__narrow60 {
+    grid-template-columns: 100%;
+    max-width: calc(#{$container-width} * .6);
+  }
+
+  &__narrow50 {
+    grid-template-columns: 100%;
+    max-width: calc(#{$container-width} * .5);
+  }
+
+  &__narrow40 {
+    grid-template-columns: 100%;
+    max-width: calc(#{$container-width} * .4);
+  }
+
+  &__advert {
+    grid-template-columns: 100%;
+    width: 40%;
+  }
+
+  &__extranarrow {
+    grid-template-columns: 100%;
+    width: 25%;
+
+    h1,
+    article {
+      text-align: center;
+    }
+  }
+
+  &__extra-narrow {
+    grid-template-columns: 25% 50% 25%;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-content {}
+
+.side-content {}
+
+// Simple Grid
+
+$breakpoints: (mobile: 0, // We are mobile first so we start from 0
+  tablet: 768px,
+  desktop: 1200px,
+) !default;
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  $breakpoint-width: map-get($breakpoints, $breakpoint);
+
+  @media (min-width: $breakpoint-width) {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+}
