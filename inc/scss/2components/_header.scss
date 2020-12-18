@@ -53,6 +53,7 @@ header {
 .home-hero {
 	color: $color_blue_darkest;
 	min-height: 75vh;
+	overflow-x: hidden;
 
 	.container {
 		display: flex;

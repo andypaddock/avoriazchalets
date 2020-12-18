@@ -7,7 +7,7 @@
     <div class="container mt3">
         <div class="row">
             <div class="col-mobile-4 col-desktop-2">
-                <?php if( get_field('show_360_link') ): ?>
+                <?php if( get_field('REMOVEshow_360_link') ): ?>
                 <div class="full-360-link no-mob">
                     <?php 
 $link = get_field('full_360_link');

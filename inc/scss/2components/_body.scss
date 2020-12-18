@@ -1365,11 +1365,21 @@
 
 .guide-menu {
   margin-right: 3rem;
+  position: sticky;
+  top: 10vh;
 
   li {
     padding: 1rem 0;
     border-top: 1px solid $color-blue-cyan;
     text-transform: uppercase;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: -1.5rem;
+      color: $color_blue_cyan;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
 
     &:last-of-type {
       border-bottom: 1px solid $color-blue-cyan;
@@ -1380,11 +1390,14 @@
       display: block;
       position: relative;
       padding-right: 2rem;
+      font-family: $font_primary;
+      font-weight: 300;
+      line-height: 1.5rem;
     }
 
     &.current-menu-item {
       a {
-        font-weight: 400;
+        font-weight: 600;
 
         &:after,
         &:before {
